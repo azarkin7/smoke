@@ -21,7 +21,7 @@ $(document).ready(function(){
         for(var i=0;i<cc;i++){
             allprice+=Number($(".priceprod").eq(i).text());
         }
-         $(".ordertable").append("<tr class='allprice'><td colspan='4'>К оплате "+allprice+" грн.</td></tr>");
+         $(".ordertable").append("<tr class='allprice'><td colspan='4'><span class='endpr'>"+allprice+"</span> грн.</td></tr>");
         cc++;
     });
    $(".numberorderr").html("Заказ №"+ Math.round(Math.random()*10000));
@@ -91,10 +91,21 @@ $(".callme").click(function(){
     }
 });    
     
-// $(".saveorder").click(function(){
-//         $(".ordertables").append($(".rowtableprod").html());
-// });
-
+$(".saveorder").click(function(){
+//         $(".endtable").html("<table class='table table-bordered ordertable'>"+$(".ordertable").html()+"</table>");
+            $("#endprices").html("К оплате "+$(".endpr").html()+" грн.");
+ });
+$("#inputcode").change(function(){
+    var code=$("#inputcode").val();
+    $.ajax({
+        url:"checkcode.php",
+        type:"POST",
+        data:"code="+code,
+        success:function(msg){
+            console.log(msg);
+        }
+    });
+});
     
 });
     function chan(a,b){
@@ -104,7 +115,7 @@ $(".callme").click(function(){
         for(var i=0;i<cc;i++){
             ct+=Number($(".priceprod").eq(i).text());
         }
-          $(".ordertable").append("<tr class='allprice'><td colspan='4'>К оплате "+ct+" грн.</td></tr>");
+          $(".ordertable").append("<tr class='allprice'><td colspan='4' >К оплате <span class='endpr'>"+ct+"</span> грн.</td></tr>");
     }
 function timershow(){
       var dt=new Date();

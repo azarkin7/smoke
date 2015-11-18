@@ -4,14 +4,19 @@ var ct=0;
 $(document).ready(function(){
     var wh=$(window).height();
     var ww=$(window).width();
+    $(".priceprs").html(start+" грн");
     $(".mainblock").css("height",wh);
     $(".blockproduct").click(function(){
+        $(".ordershowleft").animate({
+            opacity:1
+        },600);
+       $(".instr").fadeOut(200);
        // console.log($(".blockproduct").index(this));
         var indprod=$(".blockproduct").index(this);
         var prod=$(".blockproduct").eq(indprod).text();
-        var nameprod=$.trim(prod);
+        var nameprodw=$.trim(prod);
         $(".allprice").html('');
-        $(".ordertable").append("<tr><td>"+nameprod+"</td><td><input type='number' onchange='chan(this.value, "+cc+");'  min='0' max='50' value='1'></td><td><select class='''><option value='0'>0</option><option value='3'>3</option><option value='6'>6</option><option value='9'>9</option><option value='12'>12</option><option value='18'>18</option></select></td><td><span class='priceprod'>"+start+"</span></td></tr>");
+        $(".ordertable").append("<tr ><td>"+nameprodw+"</td><td><input type='number' onchange='chan(this.value, "+cc+");'  min='0' max='50' value='1'></td><td><select class='''><option value='0'>0</option><option value='3'>3</option><option value='6'>6</option><option value='9'>9</option><option value='12'>12</option><option value='18'>18</option></select></td><td><span class='priceprod'>"+start+"</span></td></tr>");
         var allprice=20;
         for(var i=0;i<cc;i++){
             allprice+=Number($(".priceprod").eq(i).text());
@@ -50,6 +55,47 @@ $(document).ready(function(){
 
 					}
 				});
+    
+    
+setInterval('timershow();',1000);
+    
+$(".saveorder").click(function(){
+    $(".pop").fadeIn(100);
+});    
+$(".callme").click(function(){
+    var nn=$("#callname").val();
+    var mm=$("#callmobile").val();
+    if(nn==""){
+        $("#callname").addClass("has_error");
+    }
+    if(mm==""){
+        $("#callmobile").addClass("has_error");
+    }
+    if(nn!="" && mm!=""){
+        $("#callname").removeClass("has_error");
+        $("#callmobile").removeClass("has_error");
+        $("#callname").addClass("has-success");
+        $("#callmobile").addClass("has-success");
+        
+        $.ajax({
+           type:"POST",
+            url:"consultation.php",
+            data:"name="+nn+"&mobile="+mm,
+            success:function(msg){
+                if(msg=='true'){
+                    $(".callme").html('Заявка отправлена!');
+                    
+                }
+            }
+        });
+    }
+});    
+    
+// $(".saveorder").click(function(){
+//         $(".ordertables").append($(".rowtableprod").html());
+// });
+
+    
 });
     function chan(a,b){
        var ct=0;
@@ -60,3 +106,28 @@ $(document).ready(function(){
         }
           $(".ordertable").append("<tr class='allprice'><td colspan='4'>К оплате "+ct+" грн.</td></tr>");
     }
+function timershow(){
+      var dt=new Date();
+    var hours=dt.getHours();
+    var min=dt.getMinutes();
+    var sec=dt.getSeconds();
+    
+    if(24-hours<=9){
+        $("#timer_hour").html("0"+(24-hours));
+    }else{
+       $("#timer_hour").html(24-hours);
+    }
+
+    if(59-min<=9){
+        $("#timer_min").html("0"+(59-min));
+    }else{
+       $("#timer_min").html(59-min);
+    }
+    
+    if(59-sec<=9){
+        $("#timer_sec").html("0"+(59-sec));
+    }else{
+       $("#timer_sec").html(59-sec);
+    }
+    
+}

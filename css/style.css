@@ -214,8 +214,83 @@ h6{
     color:yellow;
 }
 .footer a img{
-    opacity:0.7
+    opacity:0.7;
+    margin:0px auto;
 }
 .footer a img:hover{
     opacity:1
+}
+#timer_hour,#timer_min,#timer_sec,#razd{
+    display: inline-block;
+    font-family: 'Exo 2', sans-serif; 
+}
+.rowtime{
+    text-align: center;
+    colo:black;
+}
+.rowtime h6{
+    color: black;
+    text-align: center;
+    margin: 10px auto;
+    text-align: center
+}
+.ordershowleft{
+    opacity:0;
+}
+.iconmenu:hover{
+    cursor: pointer;
+}
+.blockmenu{
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    position: absolute;
+    margin: 0px auto;
+    float:left;
+    display:block;
+}
+.priceprs{
+    display: inline-block;
+    float: left;
+    position: absolute;
+    background: red;
+    color:white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+    border-top:1px solid yellow;
+        font-family: 'Exo 2', sans-serif; 
+}
+.sigar{
+    min-height: 300px;
+    background-color: aqua;
+    margin-top: 10px;
+}
+.sigar h1{
+    text-align: center
+}
+.has_error{
+    background-color: red;
+}
+#order{
+    top:0px;
+    left: 0px;
+    right:0px;
+    bottom: 0px;
+    z-index: 500;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    cursor: default;
+}
+#order:target{
+    display: block;
+}
+#orderpop{
+    background-color: white;
+    color:black;
+    margin: 0px auto;
+    width:70%;
+    margin-top:5%;
+    min-height: 400px;
 }

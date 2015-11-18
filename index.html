@@ -20,7 +20,7 @@
 <div class="container-fluid head">
     <div class="row">
         <div class="col-md-12">
-            <ul>
+            <ul class="">
                 <li><a href="">Главная</a></li>
                 <li><a href="">Ассортимент</a></li>
                 <li><a href="">Доставка и оплата</a></li>
@@ -44,9 +44,9 @@
                     <p class="name">У вас есть вопросы?</p>
                     <p class="mini">Мы с вами свяжемся в течении 12 часов</p>
                     <form>
-                        <input type="text" placeholder="Как вас зовут?">
-                        <input type="text" placeholder="(050)123 45 67">
-                        <button>Перезвоните мне</button>
+                        <input type="text" id="callname" placeholder="Как вас зовут?">
+                        <input type="text" id="callmobile" placeholder="(050)123 45 67">
+                        <button class="callme" type="button">Перезвоните мне</button>
                     </form>
                     <p class="mini"><a href="">Вы соглашаетесь с политикой конфиденциальности</a></p>
                 </div>
@@ -56,11 +56,14 @@
 </div>
  <div class="container-fluid product">
      <div class="row">
-         <div class="col-md-12"><h1>Ассортимент</h1><br><br><br><br></div>
+         <div class="col-md-12"><h1>Ассортимент </h1>
+         <br><br><br><br></div>
      </div>
      <div class="row">
          <div class="col-md-3 orderleft">
-             <h6>esmoke.in.ua</h6><br>
+            <h6 class="instr">Для заказа, выбераете желаемый вкус <img src="img/arrow-right.png" width="80%" align="center;" style='margin-top:10px;'></h6>
+<div class="ordershowleft">
+                 <h6>esmoke.in.ua</h6><br>
              <h6 class="numberorderr"></h6>
             <hr>
 <table class="table table-bordered ordertable">
@@ -72,86 +75,89 @@
   </tr>
 
 </table>
+<a href="#order" class="btn btn-default saveorder">Оформить заказ</a>
+</div>
          </div>
          <div class="col-md-9 prod">
              <div class="col-md-3 blockproduct">
-                <img src="img/product/abrikos.png" alt="" width="200" height="200">
+               <span class="priceprs"></span> <img src="img/product/abrikos.png" alt="" width="200" height="200">
                  <h6>Абрикос</h6>
              </div>
              <div class="col-md-3 blockproduct">
+                 <span class="priceprs"></span>
                 <img src="img/product/apelsin.png" alt="" width="200" height="200">
                  <h6>Апельсин</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/apple.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/apple.png" alt="" width="200" height="200">
                  <h6>Яблоко</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/banan.png" alt="" width="200" height="200">
+                 <span class="priceprs"></span><img src="img/product/banan.png" alt="" width="200" height="200">
                  <h6>Банан</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/CocaCola.png" alt="" width="200" height="200">
+                 <span class="priceprs"></span><img src="img/product/CocaCola.png" alt="" width="200" height="200">
                  <h6>CocaCola</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/kiwi.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/kiwi.png" alt="" width="200" height="200">
                  <h6>Киви</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/myata.png" alt="" width="200" height="200">
+                 <span class="priceprs"></span><img src="img/product/myata.png" alt="" width="200" height="200">
                  <h6>Мята</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/pinakolada.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/pinakolada.png" alt="" width="200" height="200">
                  <h6>Пинаколада</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/redbull.jpg" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/redbull.jpg" alt="" width="200" height="200">
                  <h6>Red Bull</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/vinograd.png" alt="" width="200" height="200">
+                 <span class="priceprs"></span><img src="img/product/vinograd.png" alt="" width="200" height="200">
                  <h6>Виноград</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/malina.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/malina.png" alt="" width="200" height="200">
                  <h6>Малина</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/ananas3.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/ananas3.png" alt="" width="200" height="200">
                  <h6>Ананас</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/Chocolate.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/Chocolate.png" alt="" width="200" height="200">
                  <h6>Шоколад</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/Granate.jpg" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/Granate.jpg" alt="" width="200" height="200">
                  <h6>Гранат</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/kofe.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/kofe.png" alt="" width="200" height="200">
                  <h6>Кофе</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/lemon.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/lemon.png" alt="" width="200" height="200">
                  <h6>Лемон</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/mango.png" alt="" width="200" height="200">
+               <span class="priceprs"></span>  <img src="img/product/mango.png" alt="" width="200" height="200">
                  <h6>Манго</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/vishnja.png" alt="" width="200" height="200">
+                 <span class="priceprs"></span><img src="img/product/vishnja.png" alt="" width="200" height="200">
                  <h6>Вишня</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/arbuz.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/arbuz.png" alt="" width="200" height="200">
                  <h6>Арбуз</h6>
              </div>
              <div class="col-md-3 blockproduct">
-                <img src="img/product/Dynya.png" alt="" width="200" height="200">
+                <span class="priceprs"></span> <img src="img/product/Dynya.png" alt="" width="200" height="200">
                  <h6>Дыня</h6>
              </div>
          </div>
@@ -162,8 +168,14 @@
      <div class="row">
          <div class="col-md-12"><h1>Цены действительны</h1><br><br><br><br></div>
      </div>
-     <div class="row">
-         <div class="col-md-12">
+     <div class="row rowtime">
+         <div class="col-md-12">   
+         <h1 id="timer_hour"></h1> 
+         <h1 id="razd">:</h1>   
+         <h1 id="timer_min"></h1>  
+         <h1 id="razd">:</h1>  
+         <h1 id="timer_sec"></h1>
+         <h6>Дальнейшая стоимость жидкостей буде составлять 30 грн за 10ml</h6>    
              
          </div>
      </div>
@@ -256,6 +268,19 @@
 </div>
 </div>
  </div>
+ 
+<!--
+ <div class="container-fluid sigar">
+     <div class="row">
+         <div class="col-md-12">
+             <h1>E-сигареты</h1>
+         </div>
+     </div>
+ </div>
+-->
+
+ 
+ 
  <div class="container-fluid footer">
 <div class="container">
          <div class="row">
@@ -281,7 +306,42 @@
      </div>
 </div>
  </div>
+ 
+ 
+<div id="order">
+    <div id="orderpop">
+        <h1>Оформление заказа</h1>
+        <div class="col-md-3">
+            <form action="" class="inline-horizontal">
+                <label for="inputame">Введите ФИО</label>
+                <input type="text" id="inputname" class="form-control"><br>
+                <label for="inputmobile">Телефон</label>
+                <input type="text" id="inputmobile" class="form-control"><br>
+                <label for="inputame">Доставка</label>
+                <select name="" id="" class="form-control">
+                    <option value="Самовывоз">Самовывоз</option>
+                    <option value="Новая почта">Новая Почта</option>
+                    <option value="Курьером">Курьером</option>
+                </select><br>
+                <span>Комментарий к заказу</span>
+                <textarea name="" class="form-control"></textarea>
+            </form>
+        </div>
+        <div class="col-md-9 endtable">
+<!--
+<table class="table table-bordered ordertables">
+  <tr style="font-weight:bolder;font-size:80%;">
+      <td>Товар</td>
+      <td>Кол-во</td>
+      <td>Крепость</td>
+      <td>Сумма</td>
+  </tr>
 
+</table>        
+-->
+        </div>
+    </div>
+</div>
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
